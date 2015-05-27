@@ -13,9 +13,9 @@ module.exports = function (grunt) {
 	 */
 	svn_files_list = [
 		'readme.txt',
-		'multisite-portfolio.php',
-		'js/**',
-		'languages/**'
+		'css-flags.php',
+		'css.php',
+		'data/**'
 	];
 
 	/**
@@ -24,9 +24,10 @@ module.exports = function (grunt) {
 	 */
 	git_files_list = svn_files_list.concat([
 		'README.md',
+		'LICENSE.md',
 		'package.json',
 		'Gruntfile.js',
-		'assets/**'
+		'example.php'
 	]);
 
 	// Project configuration.
@@ -105,8 +106,8 @@ module.exports = function (grunt) {
 					from: /~Current Version:\s*(.*)~/,
 					to: "~Current Version: <%= pkg.version %>~"
 				}, {
-					from: /Latest Stable Release:\s*\[(.*)\]\s*\(https:\/\/github.com\/soderlind\/multisite-portfolio\/releases\/tag\/(.*)\s*\)/,
-					to: "Latest Stable Release: [<%= pkg.git_tag %>](https://github.com/soderlind/<%= pkg.name %>/releases/tag/<%= pkg.git_tag %>)"
+					from: /latest stable release,\s*\[(.*)\]\s*\(https:\/\/github.com\/soderlind\/css-flags\/releases\/tag\/(.*)\s*\)/,
+					to: "latest stable release, [<%= pkg.git_tag %>](https://github.com/soderlind/<%= pkg.name %>/releases/tag/<%= pkg.git_tag %>)"
 				}]
 			},
 			reamde_txt: {
@@ -125,8 +126,8 @@ module.exports = function (grunt) {
 					from: /Version:\s*(.*)/,
 					to: "Version: <%= pkg.version %>"
 				}, {
-					from: /define\(\s*'MSPORTFOLIO_VERSION',\s*'(.*)'\s*\);/,
-					to: "define( 'MSPORTFOLIO_VERSION', '<%= pkg.version %>' );"
+					from: /define\(\s*'CSSFLAGS_VERSION',\s*'(.*)'\s*\);/,
+					to: "define( 'CSSFLAGS_VERSION', '<%= pkg.version %>' );"
 				}]
 			}
 		},
@@ -147,6 +148,26 @@ module.exports = function (grunt) {
 				dest: '<%= pkg.svn %>',
 				tmp: 'build/make_svn'
 			}
+		},
+		changelog: {
+		    sample: {
+		      options: {
+		      	fileHeader: '# Changelog',
+		      	dest: 'CHANGELOG.md',
+		      	after: '2013-03-01',
+		        logArguments: [
+		          '--pretty=- [%ad](https://github.com/soderlind/css-flags/%h): %s (committer: %cn)',
+		          '--no-merges',
+		          '--date=short'
+		        ],
+		        template: '{{> features}}',
+		        featureRegex: /^(.*)$/gim,
+		        partials: {
+		          features: '{{#if features}}{{#each features}}{{> feature}}{{/each}}{{else}}{{> empty}}{{/if}}\n',
+		          feature: '{{this}} {{this.date}}\n'
+		        }
+		      }
+		    }
 		},
 		makepot: {
 		    target: {
@@ -186,11 +207,12 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks( 'grunt-push-svn' );
 	grunt.loadNpmTasks( 'grunt-remove' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	grunt.loadNpmTasks( 'grunt-changelog' );
 
 	grunt.registerTask('syntax', 'default task description', function(){
 	  console.log('Syntax:\n' +
-	  				'\tgrunt release (pre_vcs, do_svn, do_git, clean:post_build)\n' +
-	  				'\tgrunt pre_vcs (update plugin version number in files)\n' +
+	  				'\tgrunt release (version_number, do_svn, do_git, clean:post_build)\n' +
+	  				'\tgrunt version_number (update plugin version number in files)\n' +
 	  				'\tgrunt do_svn (svn_export, copy:svn_trunk, copy:svn_tag, push_svn)\n' +
 	  				'\tgrunt do_git (gitcommit, gittag, gitpush)'
 	  	);
@@ -200,6 +222,6 @@ module.exports = function (grunt) {
 	grunt.registerTask( 'version_number', [ 'replace:reamde_md', 'replace:reamde_txt', 'replace:plugin_php' ] );
 	//grunt.registerTask( 'do_svn', [ 'svn_export', 'copy:svn_assets', 'copy:svn_trunk', 'copy:svn_tag', 'push_svn' ] );
 	grunt.registerTask( 'do_git', [ 'gitcommit', 'gittag', 'gitpush' ] );
-	grunt.registerTask( 'release', [ 'makepot', 'version_number', /*'do_svn',*/ 'do_git', 'clean:post_build' ] );
+	grunt.registerTask( 'release', [ /*'makepot',*/ 'version_number', /*'do_svn',*/ 'do_git', 'clean:post_build' ] );
 
 };

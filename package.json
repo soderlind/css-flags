@@ -1,25 +1,25 @@
 {
-  "name": "multisite-portfolio",
-  "title": "WordPress Multisite Portfolio",
+  "name": "css-flags",
+  "title": "CSS Flags",
   "version": "0.1.0",
   "git_tag": "0.1.0",
-  "description": "Shortcode that displays a portfolio of sites.",
-  "main": "multisite-portfolio.php",
+  "description": "TBA",
+  "main": "css-flags.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "repository":
-    {
-      "type": "git",
-      "url": "git://github.com/soderlind/multisite-portfolio.git"
-    },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soderlind/css-flags.git"
+  },
   "license": "GPL",
   "bugs": {
-    "url": "https://github.com/soderlind/multisite-portfolio/issues/new"
+    "url": "https://github.com/soderlind/css-flags/issues/new"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-changelog": "^0.3.1",
     "grunt-cli": "~0.1.13",
     "grunt-composer": "^0.4.4",
     "grunt-contrib-clean": "^0.6.0",
