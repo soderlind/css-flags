@@ -47,8 +47,6 @@ if ( count( $css_flags_countries ) > 0 ) {
 }
 
 
-printf("<pre>%s</pre>",print_r(array_intersect_key( $css_flags, array_flip( $css_flags_countries ) ),true));
-
 $css_flags_time = microtime();
 $css_flags_time = explode( ' ', $css_flags_time );
 $css_flags_time = $css_flags_time[1] + $css_flags_time[0];
@@ -76,7 +74,6 @@ $css_flags_template = '
 
 if ( 'all' == implode( '', $css_flags_countries ) ) {
 	foreach ( $css_flags as $country_code => $css ) {
-		//add filter_var_array to check if missing element
 		printf( $css_flags_template,
 			$country_code,
 			$css['background'],
@@ -88,7 +85,6 @@ if ( 'all' == implode( '', $css_flags_countries ) ) {
 	}
 } elseif ( count( $css_flags_countries ) > 0 ) {
 	foreach ( array_intersect_key( $css_flags, array_flip( $css_flags_countries ) ) as $country_code => $css ) {
-		//add filter_var_array to check if missing element
 		printf( $css_flags_template,
 			$country_code,
 			$css['background'],
