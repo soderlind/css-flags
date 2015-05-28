@@ -56,17 +56,17 @@ $css_flags_total_time = round( ( $css_flags_finish - $css_flags_start ), 4 );
 echo '/* CSS generated in '.$css_flags_total_time.' seconds. */';
 
 $css_flags_template = '
-.%1$s {
+.css-flag .%1$s {
 	background-image: %2$s;
 	height: %3$s;
 	width: %4$s;
 	background-size: 100%% 100%%;
 }
-.%1$s-landscape {
+.css-flag .%1$s-landscape {
 	height: %3$s;
 	width: %4$s;
 }
-.%1$s-portrait {
+.css-flag .%1$s-portrait {
 	height: %5$s;
 	width: %6$s;
 }
