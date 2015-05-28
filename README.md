@@ -132,9 +132,45 @@ add_action( 'init', function() {
 
 ## Installation
 
+### Plugin
+
 1. Download the latest stable release, [0.1.0](https://github.com/soderlind/css-flags/releases/tag/0.1.0)
 1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css-flags-cachetime` filter.
 1. Add one of the filters, [above](#usage), to your plugin or (child) themes functions.php
+
+
+### Theme
+
+1. In your (child) theme folder, clone the repo:
+
+ 	`git clone https://github.com/soderlind/css-flags.git`
+
+1. Add the following to your (child) theme functions.php
+
+	```php
+	//load the CSS Flags library
+	require_once(dirname(__FILE__) . '/css-flags/css-flags.php');
+	```
+
+1. Add one of the filters, [above](#usage), to your  (child) themes functions.php, eg:
+
+	```php
+	add_action( 'init', function() {
+		add_filter('css-flags-countries', function() {
+			return array('no','se','dk'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
+		});
+		// add_filter('css-flags-countries', function() {
+		// 	return array('all'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
+		// });
+		// add_filter('css-flags-regions', function() {
+		// 	return array('europe'); //europe, oceania, africa, asia, northamerica, southamerica, middleeast
+		// });
+		// add_filter('css-flags-exclude', function() {
+		// 	return array('gb','se');
+		// });
+	});
+	```
+
 
 ## Changelog
 
