@@ -134,7 +134,7 @@ add_action( 'init', function() {
 
 ### Plugin
 
-1. Download the latest stable release, [0.1.0](https://github.com/soderlind/css-flags/releases/tag/0.1.0)
+1. Download the latest stable release, [0.1.1](https://github.com/soderlind/css-flags/releases/tag/0.1.1)
 1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css-flags-cachetime` filter.
 1. Add one of the filters, [above](#usage), to your plugin or (child) themes functions.php
 

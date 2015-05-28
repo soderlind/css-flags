@@ -1,9 +1,9 @@
 {
   "name": "css-flags",
   "title": "CSS Flags",
-  "version": "0.1.0",
-  "git_tag": "0.1.0",
-  "description": "TBA",
+  "version": "0.1.1",
+  "git_tag": "0.1.1",
+  "description": "WordPress plugin with responsive SVG flags for 252 countries",
   "main": "css-flags.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
