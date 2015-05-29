@@ -61,17 +61,17 @@ add_action( 'init', function() {
 CSS Flags will add the following CSS (note the `.css-flag` prefix):
 ```css
 /* CSS generated in 0.002 seconds. */
-.css-flag .no {
+.css-flag.no {
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMTAwIDgwMCI+DQo8cGF0aCBmaWxsPSIjZWYyYjJkIiBkPSJtMCwwaDExMDB2ODAwaC0xMTAweiIvPg0KPGcgZmlsbD0iI2ZmZiI+DQo8cGF0aCBkPSJtMzAwLDBoMjAwdjgwMGgtMjAweiIvPg0KPHBhdGggZD0ibTAsMzAwaDExMDB2MjAwaC0xMTAweiIvPg0KPC9nPg0KPGcgZmlsbD0iIzAwMjg2OCI+DQo8cGF0aCBkPSJtMzUwLDBoMTAwdjgwMGgtMTAweiIvPg0KPHBhdGggZD0ibTAsMzUwaDExMDB2MTAwaC0xMTAweiIvPg0KPC9nPg0KPC9zdmc+DQo=');
 	height: 100%;
 	width: 137.5%;
 	background-size: 100% 100%;
 }
-.css-flag .no-landscape {
+.css-flag.no-landscape {
 	height: 100%;
 	width: 137.5%;
 }
-.css-flag .no-portrait {
+.css-flag.no-portrait {
 	height: 72.727272727273%;
 	width: 100%;
 }
