@@ -156,7 +156,7 @@ module.exports = function (grunt) {
 		      	dest: 'CHANGELOG.md',
 		      	after: '2013-03-01',
 		        logArguments: [
-		          '--pretty=- [%ad](https://github.com/soderlind/css-flags/%h): %s (committer: %cn)',
+		          '--pretty=- [%ad](https://github.com/soderlind/css-flags/commit/%h): %s (committer: %cn)',
 		          '--no-merges',
 		          '--date=short'
 		        ],
