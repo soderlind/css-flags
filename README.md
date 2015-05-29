@@ -171,6 +171,7 @@ add_action( 'init', function() {
 	});
 	```
 
+To get you started, here'a a [sample theme functions.php](sample-theme-functions.php)
 
 ## Changelog
 
