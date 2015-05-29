@@ -175,7 +175,7 @@ To get you started, here'a a [sample theme functions.php](sample-theme-functions
 
 ## Changelog
 
-See the [Changelog.md](Changelog.md)
+See the [CHANGELOG.md](CHANGELOG.md)
 
 ## Credits
 
