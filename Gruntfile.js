@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 	svn_files_list = [
 		'readme.txt',
 		'css-flags.php',
-		'css.php',
+		'class-css-flags.php',
 		'data/**'
 	];
 

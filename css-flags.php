@@ -33,7 +33,7 @@ function css_flags_loader() {
 		 *       Warning: require(http://domain/path/flags/css.php): failed to open stream: no suitable wrapper could be found
 		 *       Fatal error: require(): Failed opening required 'http://domain/path/css.php'
 		 */
-		require dirname( __FILE__ ) . '/css.php';
+		require dirname( __FILE__ ) . '/class-css-flags.php';
 	}
 	exit;
 }
