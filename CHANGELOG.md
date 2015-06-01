@@ -1,5 +1,12 @@
 # Changelog
 
+- [2015-06-01](https://github.com/soderlind/css-flags/commit/ae2196e): Version 0.1.3 (committer: soderlind) 
+- [2015-06-01](https://github.com/soderlind/css-flags/commit/557c075): changed css.php to class-css.php and rewrote it. (committer: soderlind) 
+- [2015-06-01](https://github.com/soderlind/css-flags/commit/bce3445): Added link to my site, where you can view the flags (committer: soderlind) 
+- [2015-05-30](https://github.com/soderlind/css-flags/commit/f18abf8): Sorted country list on country name, was country code (committer: soderlind) 
+- [2015-05-29](https://github.com/soderlind/css-flags/commit/e442c6d): fixed typo in example (committer: soderlind) 
+- [2015-05-29](https://github.com/soderlind/css-flags/commit/9489408): set countries=&quot;all&quot; to the shortcode (committer: soderlind) 
+- [2015-05-29](https://github.com/soderlind/css-flags/commit/49b3f06): fixed link to commits (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/35eb6a3): fixed link to commits (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/64680bb): Fixed link to CHANGELOG.md (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/0101a58): Updated (committer: soderlind) 
