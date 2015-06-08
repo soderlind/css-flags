@@ -1,5 +1,10 @@
 # Changelog
 
+- [2015-06-08](https://github.com/soderlind/css-flags/commit/c39e2b2): Version 0.1.4 (committer: soderlind) 
+- [2015-06-08](https://github.com/soderlind/css-flags/commit/eaf67d6): Added the Rainbow (LGBT) flag (committer: soderlind) 
+- [2015-06-08](https://github.com/soderlind/css-flags/commit/fba8a8b): Added the Rainbow (LGBT) flag (committer: soderlind) 
+- [2015-06-08](https://github.com/soderlind/css-flags/commit/47e30c5): Added comments (committer: soderlind) 
+- [2015-06-01](https://github.com/soderlind/css-flags/commit/dbbb046): updated (committer: soderlind) 
 - [2015-06-01](https://github.com/soderlind/css-flags/commit/ae2196e): Version 0.1.3 (committer: soderlind) 
 - [2015-06-01](https://github.com/soderlind/css-flags/commit/557c075): changed css.php to class-css.php and rewrote it. (committer: soderlind) 
 - [2015-06-01](https://github.com/soderlind/css-flags/commit/bce3445): Added link to my site, where you can view the flags (committer: soderlind) 
