@@ -1,6 +1,14 @@
 <?php
 /**
+ * class CSSFlags creates a CSS with SVG flags
  *
+ * The CSS greated are defined using the following filters:
+ * - css-flags-regions
+ * - css-flags-all-regions
+ * - css-flags-exclude
+ * The filters are documented at https://github.com/soderlind/css-flags#usage
+ *
+ * @since 0.1.3
  */
 header( "Content-type: text/css; charset: UTF-8" );
 
