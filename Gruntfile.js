@@ -145,7 +145,7 @@ module.exports = function (grunt) {
 			},
 			main: {
 				src: 'build/<%= pkg.name %>',
-				dest: '<%= pkg.svn %>',
+				dest: 'http://plugins.svn.wordpress.org/<%= pkg.name %>',
 				tmp: 'build/make_svn'
 			}
 		},
@@ -220,8 +220,8 @@ module.exports = function (grunt) {
 
 	grunt.registerTask( 'default', ['syntax'] );
 	grunt.registerTask( 'version_number', [ 'replace:reamde_md', 'replace:reamde_txt', 'replace:plugin_php' ] );
-	//grunt.registerTask( 'do_svn', [ 'svn_export', 'copy:svn_assets', 'copy:svn_trunk', 'copy:svn_tag', 'push_svn' ] );
+	grunt.registerTask( 'do_svn', [ 'svn_export', 'copy:svn_assets', 'copy:svn_trunk', 'copy:svn_tag', 'push_svn' ] );
 	grunt.registerTask( 'do_git', [ 'gitcommit', 'gittag', 'gitpush' ] );
-	grunt.registerTask( 'release', [ /*'makepot',*/ 'version_number', /*'do_svn',*/ 'do_git', 'clean:post_build' ] );
+	grunt.registerTask( 'release', [ /*'makepot',*/ 'version_number', 'do_svn', 'do_git', 'clean:post_build' ] );
 
 };
