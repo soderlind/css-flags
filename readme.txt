@@ -4,7 +4,7 @@ Donate link: http://soderlind.no/donate/
 Tags: header, link
 Requires at least: 4.0
 Tested up to: 4.3.0
-Stable tag: 0.1.7
+Stable tag: 0.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ More than 250 vector based flags for WordPress
 
 The CSS Flags plugin / library for WordPress loads a dynamicly created CSS with responsive flags.
 
-**Note** CSS Flags is not a standalone plugin/libray, To display the flags you will have to [add code to your theme](https://github.com/soderlind/css-flags/#example-1) using your own plugin or theme functions.php
+**Note:** CSS Flags is not a standalone plugin/library, To display the flags you will have to [add code to your theme](https://github.com/soderlind/css-flags/#example-1) using your own plugin or theme functions.php
 
 You can [view the flages at my site](https://soderlind.no/css-flags-plugin-for-wordpress/)
 
@@ -108,6 +108,9 @@ To get you started, here'a a [sample theme functions.php](https://github.com/sod
 
 
 == Changelog ==
+
+= 0.1.8 =
+* Added uninstall.php, which removes transients and options when you uninstall the plugin
 
 = 0.1.4 =
 * Added the [Rainbow (LGBT)](https://soderlind.no/css-flags-plugin-for-wordpress/#rainbow) flag
