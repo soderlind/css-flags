@@ -1,8 +1,8 @@
 {
   "name": "css-flags",
   "title": "CSS Flags",
-  "version": "0.1.8",
-  "git_tag": "0.1.8",
+  "version": "0.1.9",
+  "git_tag": "0.1.9",
   "description": "A WordPress plugin/library for creating responsive country flags",
   "main": "css-flags.php",
   "scripts": {
