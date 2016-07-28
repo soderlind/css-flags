@@ -1,10 +1,10 @@
-=== CSS Flags ===
+=== CSS Flags library ===
 Contributors: PerS
 Donate link: http://soderlind.no/donate/
 Tags: header, link
 Requires at least: 4.0
-Tested up to: 4.3.0
-Stable tag: 0.1.9
+Tested up to: 4.5.3
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,11 +12,11 @@ More than 250 vector based flags for WordPress
 
 == Description ==
 
-The CSS Flags plugin / library for WordPress loads a dynamicly created CSS with responsive flags.
+The CSS Flags plugin / library for WordPress loads a dynamicaly created CSS with responsive flags.
 
 **Note:** CSS Flags is not a standalone plugin/library, To display the flags you will have to [add code to your theme](https://github.com/soderlind/css-flags/#example-1) using your own plugin or theme functions.php
 
-You can [view the flages at my site](https://soderlind.no/css-flags-plugin-for-wordpress/)
+You can [view the flags at my site](https://soderlind.no/css-flags-plugin-for-wordpress/)
 
 Sample CSS:
 `
@@ -109,6 +109,9 @@ To get you started, here'a a [sample theme functions.php](https://github.com/sod
 
 == Changelog ==
 
+= 0.2.0 =
+* Update plugin to WordPress Coding Standards.
+
 = 0.1.8 =
 * Added uninstall.php, which removes transients and options when you uninstall the plugin
 
@@ -126,6 +129,3 @@ To get you started, here'a a [sample theme functions.php](https://github.com/sod
 
 = 0.1.0 =
 * Initial release
-
-
-

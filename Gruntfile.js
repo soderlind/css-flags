@@ -66,8 +66,7 @@ module.exports = function (grunt) {
 				expand: true,
 				src:  svn_files_list,
 				dest: 'build/<%= pkg.name %>/tags/<%= pkg.version %>/'
-			},
-
+			}
 		},
 		gittag: {
 			addtag: {
@@ -190,10 +189,10 @@ module.exports = function (grunt) {
 		            	'languages/.*',
 		            	'js/.*',
 		            	'node_modules/.*'
-		            ],
+		            ]
 		        }
 		    }
-		},
+		}
 	});
 
 
