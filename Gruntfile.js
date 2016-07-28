@@ -149,25 +149,16 @@ module.exports = function (grunt) {
 				tmp: 'build/make_svn'
 			}
 		},
-		changelog: {
-		    sample: {
-		      options: {
-		      	fileHeader: '# Changelog',
-		      	dest: 'CHANGELOG.md',
-		      	after: '2013-03-01',
-		        logArguments: [
-		          '--pretty=- [%ad](https://github.com/soderlind/css-flags/commit/%h): %s (committer: %cn)',
-		          '--no-merges',
-		          '--date=short'
-		        ],
-		        template: '{{> features}}',
-		        featureRegex: /^(.*)$/gim,
-		        partials: {
-		          features: '{{#if features}}{{#each features}}{{> feature}}{{/each}}{{else}}{{> empty}}{{/if}}\n',
-		          feature: '{{this}} {{this.date}}\n'
-		        }
-		      }
-		    }
+		githubChanges: {
+			dist : {
+				options: {
+					// Owner and Repository options are mandatory
+					owner : 'soderlind',
+					repository : '<%= pkg.name %>',
+					useCommitBody: true,
+					verbose : true
+				}
+			}
 		},
 		makepot: {
 		    target: {
@@ -207,7 +198,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks( 'grunt-push-svn' );
 	grunt.loadNpmTasks( 'grunt-remove' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
-	grunt.loadNpmTasks( 'grunt-changelog' );
+	grunt.loadNpmTasks( 'grunt-github-changes' );
 
 	grunt.registerTask('syntax', 'default task description', function(){
 	  console.log('Syntax:\n' +
@@ -222,6 +213,7 @@ module.exports = function (grunt) {
 	grunt.registerTask( 'version_number', [ 'replace:reamde_md', 'replace:reamde_txt', 'replace:plugin_php' ] );
 	grunt.registerTask( 'do_svn', [ 'svn_export', 'copy:svn_assets', 'copy:svn_trunk', 'copy:svn_tag', 'push_svn' ] );
 	grunt.registerTask( 'do_git', [ 'gitcommit', 'gittag', 'gitpush' ] );
+	grunt.registerTask( 'changelog', [ 'githubChanges:dist'] );
 	grunt.registerTask( 'release', [ /*'makepot',*/ 'version_number', 'do_svn', 'do_git', 'clean:post_build' ] );
 
 };
