@@ -1,5 +1,11 @@
 # Changelog
 
+- [2016-07-28](https://github.com/soderlind/css-flags/commit/0442c21): Version 0.2.0 (committer: soderlind) 
+- [2016-07-28](https://github.com/soderlind/css-flags/commit/9dff4f0): 0.2.0 (committer: soderlind) 
+- [2016-07-28](https://github.com/soderlind/css-flags/commit/6da0127): Update to WordPress Coding Standards (committer: soderlind) 
+- [2016-07-28](https://github.com/soderlind/css-flags/commit/c2b1d11): Update to WordPress Coding Standards (committer: soderlind) 
+- [2016-07-28](https://github.com/soderlind/css-flags/commit/3153aad): Add travis and codeclimate config files (committer: soderlind) 
+- [2015-06-19](https://github.com/soderlind/css-flags/commit/34744b1): Updated Changelog (committer: soderlind) 
 - [2015-06-19](https://github.com/soderlind/css-flags/commit/cb23fb7): Version 0.1.9 (committer: soderlind) 
 - [2015-06-19](https://github.com/soderlind/css-flags/commit/2ea04ef): Version 0.1.8 (committer: soderlind) 
 - [2015-06-19](https://github.com/soderlind/css-flags/commit/64a70cb): remove transients and options when you uninstall the plugin (committer: soderlind) 
@@ -25,7 +31,7 @@
 - [2015-06-01](https://github.com/soderlind/css-flags/commit/bce3445): Added link to my site, where you can view the flags (committer: soderlind) 
 - [2015-05-30](https://github.com/soderlind/css-flags/commit/f18abf8): Sorted country list on country name, was country code (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/e442c6d): fixed typo in example (committer: soderlind) 
-- [2015-05-29](https://github.com/soderlind/css-flags/commit/9489408): set countries=&quot;all&quot; to the shortcode (committer: soderlind) 
+- [2015-05-29](https://github.com/soderlind/css-flags/commit/9489408): set countries&#x3D;&quot;all&quot; to the shortcode (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/49b3f06): fixed link to commits (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/35eb6a3): fixed link to commits (committer: soderlind) 
 - [2015-05-29](https://github.com/soderlind/css-flags/commit/64680bb): Fixed link to CHANGELOG.md (committer: soderlind) 

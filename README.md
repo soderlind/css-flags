@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/soderlind/css-flags.svg?branch=master)](https://travis-ci.org/soderlind/css-flags) [![Code Climate](https://codeclimate.com/github/soderlind/css-flags/badges/gpa.svg)](https://codeclimate.com/github/soderlind/css-flags)
 # CSS Flags library for WordPress
 
 
