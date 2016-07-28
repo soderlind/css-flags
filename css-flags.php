@@ -4,18 +4,18 @@ Plugin Name: CSS Flags
 Plugin URI: https://github.com/soderlind/css-flags
 Description: The plugin has responsive SVG flags for 252 countries. See <a href="https://github.com/soderlind/css-flags#usage">documentation</a>.
 Author: Per Soderlind
-Version: 0.1.9
+Version: 0.2.0
 Author URI: http://soderlind.no
 GitHub Plugin URI: soderlind/css-flags
 Credits: http://www.phoca.cz/cssflags/
 */
 
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Cheating, are we?' );
 }
 
 
-define( 'CSSFLAGS_VERSION', '0.1.9' );
+define( 'CSSFLAGS_VERSION', '0.2.0' );
 
 
 function css_flags_enqueue() {

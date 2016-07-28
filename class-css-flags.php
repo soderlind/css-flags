@@ -10,7 +10,7 @@
  *
  * @since 0.1.3
  */
-header( "Content-type: text/css; charset: UTF-8" );
+header( 'Content-type: text/css; charset: UTF-8' );
 
 if ( defined( 'ABSPATH' ) ) {
 	CSSFlags::instance();
@@ -35,37 +35,36 @@ class CSSFlags {
 
 	private function get_css() {
 
-		$this->timer('start');
+		$this->timer( 'start' );
 
-		$cachetime = filter_var( apply_filters( 'css-flags-cachetime', 7200 ) , FILTER_VALIDATE_INT, array( 'default'    => 7200 ) );
+		$cachetime = filter_var( apply_filters( 'css-flags-cachetime', 7200 ) , FILTER_VALIDATE_INT, array( 'default' => 7200 ) );
 		$data_path = dirname( __FILE__ );
 
 		//new version? reset the cache
-		$options = get_option( "CSS_Flags" );
-		$version = (isset($options['version'])) ? $options['version'] : '0';
-		if ( $version != CSSFLAGS_VERSION ) {
+		$options = get_option( 'CSS_Flags' );
+		$version = (isset( $options['version'] )) ? $options['version'] : '0';
+		if ( CSSFLAGS_VERSION != $version ) {
 			$options['version'] = CSSFLAGS_VERSION;
 			delete_transient( 'css-flags-all-countries' );
 			delete_transient( 'css-flags-all-regions' );
-			update_option( "CSS_Flags", $options );
+			update_option( 'CSS_Flags', $options );
 		}
 
 		//add country falgs to cache
-		if ( false === ( $css_flags = get_transient( "css-flags-all-countries" ) ) ) {
+		if ( false === ( $css_flags = get_transient( 'css-flags-all-countries' ) ) ) {
 			$json = file_get_contents( esc_url( $data_path  . '/data/flags.json' ) );
 			$css_flags = json_decode( $json, true );
 
-			set_transient( "css-flags-all-countries", $css_flags,  $cachetime );
+			set_transient( 'css-flags-all-countries', $css_flags,  $cachetime );
 		}
 
 		//add regions to cache
-		if ( false === ( $regions = get_transient( "css-flags-all-regions" ) ) ) {
+		if ( false === ( $regions = get_transient( 'css-flags-all-regions' ) ) ) {
 			$json = file_get_contents( esc_url( $data_path  . '/data/regions.json' ) );
 			$regions = json_decode( $json, true );
 
-			set_transient( "css-flags-all-regions", $regions, $cachetime );
+			set_transient( 'css-flags-all-regions', $regions, $cachetime );
 		}
-
 
 		$countries = array();
 		if ( count( $regions_selected = apply_filters( 'css-flags-regions', array() ) ) > 0 ) { // europe, oceania, africa, asia, northamerica, southamerica, middleeast
@@ -78,14 +77,11 @@ class CSSFlags {
 			$countries = apply_filters( 'css-flags-countries', array() );
 		}
 
-
-
 		if ( count( $countries ) > 0 ) {
 			$countries = array_diff( $countries , apply_filters( 'css-flags-exclude', array() ) );
 		}
 
-
-		$this->timer('stop');
+		$this->timer( 'stop' );
 
 		$template = '
 		.css-flag.%1$s {
@@ -134,19 +130,18 @@ class CSSFlags {
 	 * helper method, used to benchmark CSS Flags
 	 * @param  string $event 'start' or 'stop'
 	 */
-	private function timer($event = 'start') {
+	private function timer( $event = 'start' ) {
 
 		$time = microtime();
 		$time = explode( ' ', $time );
 		$time = $time[1] + $time[0];
 
-
-		switch ($event) {
+		switch ( $event ) {
 			case 'start':
 				$this->start = $time;
 				break;
 			case 'stop':
-				if (0 != $this->start) {
+				if ( 0 != $this->start ) {
 					$finish = $time;
 					$total_time = round( ( $finish - $this->start ), 4 );
 
@@ -155,5 +150,4 @@ class CSSFlags {
 				break;
 		}
 	}
-
 }
