@@ -1,0 +1,24 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - php
+  eslint:
+    enabled: true
+    env:
+      jquery: true
+  fixme:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "WordPress-Core"
+ratings:
+  paths:
+    - "**.js"
+    - "**.php"
+exclude_paths:
+  - node_modules/**/*
+  - _files/**
