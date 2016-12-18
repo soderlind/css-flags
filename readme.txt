@@ -4,7 +4,7 @@ Donate link: http://soderlind.no/donate/
 Tags: header, link
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 0.2.2
+Stable tag: 0.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,8 @@ To get you started, here'a a [sample theme functions.php](https://github.com/sod
 
 
 == Changelog ==
+= 0.3.0 =
+* **NOTE** You need to update your code, all filters have changed (changed dash to underscrore): `css_flags_countries`, `css_flags_regions`, `css_flags_exclude` and `css_flags_cachetime`.
 = 0.2.2 =
 * Tested & found compatible with WP 4.7.
 
