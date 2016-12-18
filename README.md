@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/soderlind/css-flags.svg?branch=master)](https://travis-ci.org/soderlind/css-flags) [![Code Climate](https://codeclimate.com/github/soderlind/css-flags/badges/gpa.svg)](https://codeclimate.com/github/soderlind/css-flags)
 # CSS Flags library for WordPress
 
-**NOTE** In 0.3.0, [all filters have changed](#Usage) (changed dash to underscrore): `css_flags_countries`, `css_flags_regions`, `css_flags_exclude` and `css_flags_cachetime`.
+**NOTE** In 0.3.0, [all filters have changed](#usage) (changed dash to underscrore): `css_flags_countries`, `css_flags_regions`, `css_flags_exclude` and `css_flags_cachetime`.
 
 The CSS Flags [plugin](#plugin) / [library](#theme) for WordPress loads a [dynamicly created CSS](https://github.com/soderlind/css-flags/blob/master/css-flags.php#L21-L39). It has responsive [SVG](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics) flags for the following countries (country code in parentheses):
 
