@@ -14,37 +14,37 @@ You can view the flags [at my site](https://soderlind.no/css-flags-plugin-for-wo
 The total CSS file size is 4 MB, and you don't want to send all that data back to the users, so you **must** use one of the following filters in your plugin or theme.
 
 
-**css-flags-countries**: Load flags for one or more countries
+**css_flags_countries**: Load flags for one or more countries
 ```php
-add_filter('css-flags-countries', function() {
+add_filter('css_flags_countries', function() {
 	return array('no'); // Array with ISO_3166-1_alpha-2 country codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 });
 ```
 
-**css-flags-regions**: Load the flags for one or more regions. You can choose between europe, oceania, africa, asia, northamerica, southamerica and middleeast.
+**css_flags_regions**: Load the flags for one or more regions. You can choose between europe, oceania, africa, asia, northamerica, southamerica and middleeast.
 ```php
-add_filter('css-flags-regions', function() {
+add_filter('css_flags_regions', function() {
 	return array('europe'); //europe, oceania, africa, asia, northamerica, southamerica, middleeast
 });
 ```
 
-**css-flags-exclude**: Exclude some countries from the list. This filter must be used in combination with the `css-flags-countries` or `css-flags-regions` filters
+**css_flags_exclude**: Exclude some countries from the list. This filter must be used in combination with the `css_flags_countries` or `css_flags_regions` filters
 ```php
-add_filter('css-flags-exclude', function() {
+add_filter('css_flags_exclude', function() {
 	return array('eu');
 });
 ```
 
-**css-flags-cachetime**: Change the cache time, default it's 7200 (60x60x2 = 2 hours)
+**css_flags_cachetime**: Change the cache time, default it's 7200 (60x60x2 = 2 hours)
 ```php
-add_filter('css-flags-cachetime', function() {
+add_filter('css_flags_cachetime', function() {
 	return 172800; // 2 days
 });
 ```
 
 If you must (but you shouldn't), you can load all the  CSS flags using the following:
 ```php
-add_filter('css-flags-countries', function() {
+add_filter('css_flags_countries', function() {
 	return array('all'); // load all country flags (don't it's 4MB)
 });
 ```
@@ -55,7 +55,7 @@ add_filter('css-flags-countries', function() {
 Using this filter in your (child) theme functions.php
 ```php
 add_action( 'init', function() {
-	add_filter('css-flags-countries', function() {
+	add_filter('css_flags_countries', function() {
 		return array('no');
 	});
 });
@@ -116,7 +116,7 @@ I bet you can CSS and HTML better than me, but you could display the flag using 
 Load the CSS Flags for the five Nordic countries and  their autonomous regions: Norway (no), Sweden (se), Denmark (dk), Findland (fi), Iceland (is), the Faroe Islands (fo), Greenland (gl) and Aaland (ax)
 ```php
 add_action( 'init', function() {
-	add_filter('css-flags-countries', function() {
+	add_filter('css_flags_countries', function() {
 		return array('no','se','dk','fi','is', 'fo', 'gl','ax'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 	});
 });
@@ -125,7 +125,7 @@ add_action( 'init', function() {
 Only load the Scandinavian flags ('no','se','dk') by removing flags from the loaded list
 ```php
 add_action( 'init', function() {
-	add_filter('css-flags-exclude', function() {
+	add_filter('css_flags_exclude', function() {
 		return array('fi','is', 'fo', 'gl','ax'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 	});
 });
@@ -137,7 +137,7 @@ add_action( 'init', function() {
 ### Plugin
 
 1. Download the latest stable release, [0.2.2](https://github.com/soderlind/css-flags/releases/tag/0.2.2)
-1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css-flags-cachetime` filter.
+1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css_flags_cachetime` filter.
 1. Add one of the filters, [above](#usage), to your plugin or (child) themes functions.php
 
 
@@ -158,16 +158,16 @@ add_action( 'init', function() {
 
 	```php
 	add_action( 'init', function() {
-		add_filter('css-flags-countries', function() {
+		add_filter('css_flags_countries', function() {
 			return array('no','se','dk'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 		});
-		// add_filter('css-flags-countries', function() {
+		// add_filter('css_flags_countries', function() {
 		// 	return array('all'); // ISO_3166-1_alpha-2 codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 		// });
-		// add_filter('css-flags-regions', function() {
+		// add_filter('css_flags_regions', function() {
 		// 	return array('europe'); //europe, oceania, africa, asia, northamerica, southamerica, middleeast
 		// });
-		// add_filter('css-flags-exclude', function() {
+		// add_filter('css_flags_exclude', function() {
 		// 	return array('gb','se');
 		// });
 	});

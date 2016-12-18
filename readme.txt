@@ -42,37 +42,37 @@ Sample CSS:
 The total CSS file size is 4 MB, and you don't want to send all that data back to the users, so you **must** use one of the following filters in your plugin or theme.
 
 
-**css-flags-countries**: Load flags for one or more countries
+**css_flags_countries**: Load flags for one or more countries
 `
-add_filter('css-flags-countries', function() {
+add_filter('css_flags_countries', function() {
 	return array('no'); // Array with ISO_3166-1_alpha-2 country codes: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements
 });
 `
 
-**css-flags-regions**: Load the flags for one or more regions. You can choose between europe, oceania, africa, asia, northamerica, southamerica and middleeast.
+**css_flags_regions**: Load the flags for one or more regions. You can choose between europe, oceania, africa, asia, northamerica, southamerica and middleeast.
 `
-add_filter('css-flags-regions', function() {
+add_filter('css_flags_regions', function() {
 	return array('europe'); //europe, oceania, africa, asia, northamerica, southamerica, middleeast
 });
 `
 
-**css-flags-exclude**: Exclude some countries from the list. This filter must be used in combination with the `css-flags-countries` or `css-flags-regions` filters
+**css_flags_exclude**: Exclude some countries from the list. This filter must be used in combination with the `css_flags_countries` or `css_flags_regions` filters
 `
-add_filter('css-flags-exclude', function() {
+add_filter('css_flags_exclude', function() {
 	return array('eu');
 });
 `
 
-**css-flags-cachetime**: Change the cache time, default it's 7200 (60x60x2 = 2 hours)
+**css_flags_cachetime**: Change the cache time, default it's 7200 (60x60x2 = 2 hours)
 `
-add_filter('css-flags-cachetime', function() {
+add_filter('css_flags_cachetime', function() {
 	return 172800; // 2 days
 });
 `
 
 If you must (but you shouldn't), you can load all the  CSS flags using the following:
 `
-add_filter('css-flags-countries', function() {
+add_filter('css_flags_countries', function() {
 	return array('all'); // load all country flags (don't it's 4MB)
 });
 `
@@ -90,7 +90,7 @@ The original CSS file is from http://www.phoca.cz/cssflags/. If you only need th
 = Plugin =
 
 1. Download the latest stable release
-1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css-flags-cachetime` filter.
+1. Add and activate it. This will load the CSS (4 MB) and cache it using the [WordPress Transients API](https://codex.wordpress.org/Transients_API). The default cache time is 7200. The cache time can be changed using the  `css_flags_cachetime` filter.
 1. Add one of the filters, see **Usage** above, to your plugin or (child) themes functions.php
 
 

@@ -19,7 +19,7 @@ define( 'CSSFLAGS_VERSION', '0.2.2' );
 
 
 function css_flags_enqueue() {
-	wp_enqueue_style( 'css-flags', admin_url( 'admin-ajax.php' ).'?action=css_flags_loader&wpnonce=' . wp_create_nonce( 'css-flags-nonce' ), false,  CSSFLAGS_VERSION );
+	wp_enqueue_style( 'css-flags', admin_url( 'admin-ajax.php' ) . '?action=css_flags_loader&wpnonce=' . wp_create_nonce( 'css-flags-nonce' ), false,  CSSFLAGS_VERSION );
 }
 
 function css_flags_loader() {

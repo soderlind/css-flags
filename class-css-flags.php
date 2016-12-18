@@ -3,9 +3,9 @@
  * class CSSFlags creates a CSS with SVG flags
  *
  * The CSS greated are defined using the following filters:
- * - css-flags-regions
+ * - css_flags_regions
  * - css-flags-all-regions
- * - css-flags-exclude
+ * - css_flags_exclude
  * The filters are documented at https://github.com/soderlind/css-flags#usage
  *
  * @since 0.1.3
@@ -37,7 +37,7 @@ class CSSFlags {
 
 		$this->timer( 'start' );
 
-		$cachetime = filter_var( apply_filters( 'css-flags-cachetime', 7200 ) , FILTER_VALIDATE_INT, array( 'default' => 7200 ) );
+		$cachetime = filter_var( apply_filters( 'css_flags_cachetime', 7200 ) , FILTER_VALIDATE_INT, array( 'default' => 7200 ) );
 		$data_path = dirname( __FILE__ );
 
 		//new version? reset the cache
@@ -52,7 +52,7 @@ class CSSFlags {
 
 		//add country falgs to cache
 		if ( false === ( $css_flags = get_transient( 'css-flags-all-countries' ) ) ) {
-			$json = file_get_contents( esc_url( $data_path  . '/data/flags.json' ) );
+			$json = file_get_contents( esc_url( $data_path . '/data/flags.json' ) );
 			$css_flags = json_decode( $json, true );
 
 			set_transient( 'css-flags-all-countries', $css_flags,  $cachetime );
@@ -60,25 +60,25 @@ class CSSFlags {
 
 		//add regions to cache
 		if ( false === ( $regions = get_transient( 'css-flags-all-regions' ) ) ) {
-			$json = file_get_contents( esc_url( $data_path  . '/data/regions.json' ) );
+			$json = file_get_contents( esc_url( $data_path . '/data/regions.json' ) );
 			$regions = json_decode( $json, true );
 
 			set_transient( 'css-flags-all-regions', $regions, $cachetime );
 		}
 
 		$countries = array();
-		if ( count( $regions_selected = apply_filters( 'css-flags-regions', array() ) ) > 0 ) { // europe, oceania, africa, asia, northamerica, southamerica, middleeast
+		if ( count( $regions_selected = apply_filters( 'css_flags_regions', array() ) ) > 0 ) { // europe, oceania, africa, asia, northamerica, southamerica, middleeast
 			$countries_regions = array();
 			foreach ( array_values( array_intersect_key( $regions, array_flip( $regions_selected ) ) ) as $key => $value ) {
 				$countries_regions = array_merge( $countries_regions, $value );
 			}
 			$countries = array_keys( $countries_regions );
 		} else {
-			$countries = apply_filters( 'css-flags-countries', array() );
+			$countries = apply_filters( 'css_flags_countries', array() );
 		}
 
 		if ( count( $countries ) > 0 ) {
-			$countries = array_diff( $countries , apply_filters( 'css-flags-exclude', array() ) );
+			$countries = array_diff( $countries , apply_filters( 'css_flags_exclude', array() ) );
 		}
 
 		$this->timer( 'stop' );
@@ -100,7 +100,7 @@ class CSSFlags {
 		}
 		';
 
-		if ( 'all' == implode( '', $countries ) ) {
+		if ( 'all' == implode( css_flags_regions, $countries ) ) {
 			foreach ( $css_flags as $country_code => $css ) {
 				printf( $template,
 					$country_code,
@@ -145,7 +145,7 @@ class CSSFlags {
 					$finish = $time;
 					$total_time = round( ( $finish - $this->start ), 4 );
 
-					echo '/* CSS Flags (https://github.com/soderlind/css-flags) generated in '.$total_time.' seconds. */';
+					echo '/* CSS Flags (https://github.com/soderlind/css-flags) generated in ' . $total_time . ' seconds. */';
 				}
 				break;
 		}
