@@ -13,10 +13,6 @@ matrix:
   fast_finish: true
 
   include:
-    # aliased to 5.3
-    - php: '5.3'
-    # aliased to a recent 5.4.x version
-    - php: '5.4'
     # aliased to a recent 5.6.x version
     - php: '5.6'
       env: SNIFF=0
@@ -24,6 +20,10 @@ matrix:
     - php: '7.0'
     # aliased to a recent 7.1.x version
     - php: '7.1'
+    # aliased to a recent 7.2.x version
+    - php: '7.2'
+    # aliased to a recent 7.3.x version
+    - php: '7.3'
     # aliased to a recent hhvm version
     - php: 'hhvm'
 
