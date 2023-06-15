@@ -184,7 +184,7 @@ See the [CHANGELOG.md](CHANGELOG.md)
 
 The original CSS file is from http://www.phoca.cz/cssflags/. If you only need the CSS file, grab it there.
 
-##Copyright and License
+## Copyright and License
 
 CSS Flags plugin for WordPress is copyright 2015 Per Soderlind
 
